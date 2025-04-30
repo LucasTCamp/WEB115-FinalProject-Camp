@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
+    <link rel = "stylesheet" src = "style.css"></link>
 </head>
 <body>
+    <h1 id = "header">Task Manager</h1>
+    <div>
+        <input type = "text" id = "taskName" placeholder = "Enter Task">
+
+        <select id = "priority">
+            <option value = "High">High</opition>
+            <option value = "Medium">Medium</option>
+            <option value = "Small">Small</option>
+        </select>
     
-    <input type = "text" id = "TaskName" placeholder = "Enter Task">
+        <input type="checkbox" id = "Importance">Important</input>
+    
+        <button id = "addTask">Add Task</button>
+    </div>
 
-    <input type = "text" id = "Priority" placeholder = "Priority">
-
-    <input type="checkbox" id = "Importance">Important</input>
-
-    <input type = "button" id = "AddTask" value = "AddTask">
-
-    <div id = "taskmanager"></p>
+    <div id = "taskmanager"></div>
 
     <script src = "script.js" ></script>
+    
 </body>
 </html>

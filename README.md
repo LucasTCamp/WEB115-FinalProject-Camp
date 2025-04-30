@@ -1,1 +1,3 @@
 # WEB115-FinalProject-Camp
+
+On the first day, I was feeling mad tired so I took a nap. 2nd day, I got the structure done and finished the mechanics for adding a task and console.logging it in JSON. Ran into a few typeErrors and Syntax Errors, but I figured it out. I tried to do some css styling but I guess I forgot how to. Still haven't added the strikethrough and highlighting stuff red, but that's for another day. 
