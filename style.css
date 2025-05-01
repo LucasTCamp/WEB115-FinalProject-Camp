@@ -1,4 +1,25 @@
-h1#header {
+h1 {
    text-align: center;
 }
 
+body {
+   text-align: center;
+   background-color: blanchedalmond;
+}
+
+#taskmanager div{
+   font-family: 'Gill Sans';
+   margin-top: 30px;
+   font-size:large;
+}
+
+.important {
+   background-color: red;
+}
+
+.completed {
+   text-decoration: line-through;
+}
+#taskmanager div:not(.important){
+   background-color: azure;
+}

@@ -6,11 +6,28 @@ function displayTasks(){ //Function that display each task in the array "tasks"
 
     tasks.forEach(function(task) { //Iterates over each task in tasks and displays it's contents.
         let taskD = document.createElement("div")
-        taskD.innerHTML = `<p> ${task.name}--------------------Priority: ${task.priority}--------------------${task.date} <button id = isDone>Done</button> <button id = delete>Delete</button>`
+        if (task.isImportant) taskD.classList.add("important") //adds to classlist so it can be edited in css
+        if (task.isCompleted) taskD.classList.add("completed")
+
+        taskD.innerHTML = `<p> ${task.name}--------------------Priority: ${task.priority}--------------------${task.date} 
+        <button onclick = "updateCompletion(${task.id})">Done</button> <button onclick = "deleteTask(${task.id})">Delete</button></p>`
+        
         taskmanager.appendChild(taskD)
     })
 }
 
+function updateCompletion(id) { //Function used so that when the buttion "Done" is clicked, it will switch the isCompleted key to the opposite in the task object. Eg. if the task was already marked as completed, then it would be changed to false if clicked again.
+    let task = tasks.find(t => t.id === id); //Finds task with matching id.
+    task.isCompleted =! task.isCompleted; //Swaps key value from true/false
+    displayTasks()
+    console.log(JSON.stringify(tasks,null,2))
+}
+
+function deleteTask(id) {
+    tasks = tasks.filter(t => t.id !== id) //Deletes the tasks
+    displayTasks()
+    console.log(JSON.stringify(tasks,null,2))
+}
 //gets all the info given when the user clicks Add task and creates an object out of it.
 document.getElementById("addTask").addEventListener("click", function() {
     
